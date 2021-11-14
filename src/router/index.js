@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Test from '../views/Test.vue'
+import PostsIndex from '../views/PostsIndex.vue'
 import SecondTest from '../views/SecondTest.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
@@ -16,9 +16,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test
+    path: '/posts',
+    name: 'PostsIndex',
+    component: PostsIndex
   },
   {
     path: '/second-test',
