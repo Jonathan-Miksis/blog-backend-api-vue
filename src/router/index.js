@@ -7,6 +7,7 @@ import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import PostShow from '../views/PostShow.vue'
+import PostEdit from '../views/PostEdit.vue'
 
 Vue.use(VueRouter)
 
@@ -27,9 +28,14 @@ const routes = [
     component: PostsNew
   },
   {
-    path: '/posts/3',
+    path: '/posts/:id',
     name: 'PostShow',
     component: PostShow
+  },
+  {
+    path: '/posts/:id/edit',
+    name: 'PostEdit',
+    component: PostEdit
   },
   {
     path: '/signup',
