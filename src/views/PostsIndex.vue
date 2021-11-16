@@ -33,7 +33,7 @@ import axios from 'axios'
           console.log(response.data);
           this.posts = response.data;
         })
-      }
+      },
     },
   };
 </script>
