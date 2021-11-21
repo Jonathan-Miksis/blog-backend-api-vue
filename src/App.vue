@@ -25,10 +25,10 @@
             Authentication
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/login">Login</a></li>
-            <li><a class="dropdown-item" href="/logout">Signout</a></li>
+            <li v-if="!isLoggedIn()"><a class="dropdown-item" href="/login">Login</a></li>
+            <li v-if="isLoggedIn()"><a class="dropdown-item" href="/logout">Signout</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/signup">Signup</a></li>
+            <li v-if="!isLoggedIn()"><a class="dropdown-item" href="/signup">Signup</a></li>
           </ul>
         </li>
       </ul>
@@ -39,7 +39,10 @@
     </div>
   </div>
 </nav>
+<div class="container">
+  logged in? {{ isLoggedIn() }}
     <router-view/>
+    </div>
   </div>
 </template>
 
@@ -51,3 +54,20 @@
 }
 
 </style>
+
+<script>
+  export default {
+    methods: {
+      isLoggedIn: function() {
+        console.log('is logged in?');
+        console.log(localStorage.getItem("jwt"));
+        if (localStorage.getItem("jwt")) {
+          return true;
+        }   else {
+          return false;
+      }
+    }
+  }
+}
+</script>
+
