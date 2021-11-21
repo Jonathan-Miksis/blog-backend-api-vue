@@ -40,7 +40,8 @@
   </div>
 </nav>
 <div class="container">
-  logged in? {{ isLoggedIn() }}
+  logged in? {{ isLoggedIn() }} <br />
+  User Id {{ getUserId() }}
     <router-view/>
     </div>
   </div>
@@ -59,13 +60,14 @@
   export default {
     methods: {
       isLoggedIn: function() {
-        console.log('is logged in?');
-        console.log(localStorage.getItem("jwt"));
         if (localStorage.getItem("jwt")) {
           return true;
         }   else {
           return false;
       }
+    },
+    getUserId: function() {
+      return localStorage.getItem('user_id');
     }
   }
 }

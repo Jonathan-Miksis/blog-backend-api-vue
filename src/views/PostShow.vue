@@ -5,8 +5,10 @@
       <p>Title: {{post.title}}</p>
       <p>Body: {{post.body}}</p>
       <img v-bind:src="post.image">
-      <p><router-link v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link></p>
-      <button v-on:click="destroyPost()">Remove Post</button>
+      <div v-if="post.user_id == $parent.getUserId()">
+        <p><router-link v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link></p>
+        <button v-on:click="destroyPost()">Remove Post</button>
+      </div>
   </div>
 </template>
 
