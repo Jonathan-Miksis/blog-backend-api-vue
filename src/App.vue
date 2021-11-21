@@ -57,6 +57,7 @@
 </style>
 
 <script>
+
   export default {
     methods: {
       isLoggedIn: function() {
@@ -69,7 +70,7 @@
     getUserId: function() {
       return localStorage.getItem('user_id');
     }
-  }
+  },
 }
 </script>
 
