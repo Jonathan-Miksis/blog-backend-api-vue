@@ -12,6 +12,8 @@
     <div>
       <label>Body:</label>
       <input type="text" v-model="newPostParams.body" />
+      <small v-if="newPostParams.body.length > 0 && newPostParams.body.length <= 100"> {{ 100 - newPostParams.body.length }} characters remaining </small>
+      <small class="text-danger" v-if="newPostParams.body.length > 100">Body is too long</small>
     </div>
     <div>
       <label>Image:</label>
@@ -28,7 +30,11 @@
     export default {
       data: function () {
       return {
-      newPostParams: { },
+      newPostParams: { 
+        title: "",
+        body: "",
+        image: "",
+      },
     errors: []
       };
     },
